@@ -13,6 +13,9 @@ SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)
 
 
 def get_session():
+    """
+    Helper function to get database session.
+    """
     session = SessionLocal()
     try:
         yield session

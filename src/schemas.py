@@ -9,7 +9,6 @@ class ProductCreate(BaseModel):
 
 
 class ProductUpdate(BaseModel):
-    id: int
     name: Optional[str]
     price: Optional[int]
     quantity: Optional[int]

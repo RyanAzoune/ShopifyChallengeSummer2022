@@ -40,12 +40,12 @@ def read_product(id: int, session: Session = Depends(get_session)):
 
 
 @router.put("/product/{id}", response_model=schemas.Product)
-def update_product(request: schemas.ProductUpdate, session: Session = Depends(get_session)):
+def update_product(id: int, request: schemas.ProductUpdate, session: Session = Depends(get_session)):
     """
     Update a product in inventory by the given id.
     """
 
-    product = session.query(models.Product).get(request.id)
+    product = session.query(models.Product).get(id)
 
     if product:
         # Overwrite fields of the product with the values specified in
